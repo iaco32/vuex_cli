@@ -10,6 +10,9 @@ export default createStore({
     }
   },
   mutations: {
+    setName: (state,nome)  => {
+      state.realname = nome;
+    }
   },
   actions: {
   },
