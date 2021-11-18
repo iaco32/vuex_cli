@@ -43,11 +43,12 @@ export default {
     },
   },
   methods: {
-    // ...mapMutations(["setName"]),
+    ...mapMutations(["setName"]),
     // ...mapActions("profile", ["actionProfile"]),
     invia() {
-      this.$store.state.realname = this.nome1;
-      //this.$store.commit('setName','Roberto');
+      // this.$store.state.realname = this.nome1;
+      // this.$store.commit("setName", "Roberto");
+      this.setName("Roberto");
       // this.actionProfile(this.profile);
     },
   },
