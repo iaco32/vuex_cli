@@ -3,9 +3,9 @@
     <h4>Il mio Profilo</h4>
     <ul class="list-group list-group-flush">
       <li class="list-group-item"><b>Nome : </b>{{ getName }}</li>
-      <li class="list-group-item"><b>getNameSettings : </b></li>
-      <li class="list-group-item"><b>Cognome : </b></li>
-      <li class="list-group-item"><b>Email : </b></li>
+      <!-- <li class="list-group-item"><b>getNameSettings : </b></li> -->
+      <li class="list-group-item"><b>Cognome : </b>{{ getCognome }}</li>
+      <li class="list-group-item"><b>Email : </b>{{ getEmail }}</li>
     </ul>
   </div>
 </template>
@@ -20,13 +20,7 @@ export default {
   },
   created() {},
   computed: {
-    ...mapGetters(
-      ["getName"]
-      //   getName: "profile/getName",
-      //   getCognome: "profile/getCognome",
-      //   getNameSettings: "settings/getName",
-      //   getEmail: "profile/getEmail"
-    ),
+    ...mapGetters(["getName", "getCognome", "getEmail"]),
     // nome1() {
     //   return this.$store.getters.getName;
     // },

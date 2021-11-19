@@ -5,11 +5,11 @@
       <div class="card-body">
         <div class="list-group">
           <label>Nome: {{ nome1 }}</label>
-          <input type="text" v-model="nome1" name="nome" />
+          <input type="text" v-model="profile.nome1" name="nome" />
           <label>Cognome: </label>
-          <input type="text" v-model="cognome" name="cognome" />
+          <input type="text" v-model="profile.cognome" name="cognome" />
           <label>Email: </label>
-          <input type="text" v-model="email" name="email" />
+          <input type="text" v-model="profile.email" name="email" />
         </div>
         <hr />
         <a href="#" class="btn btn-primary" @click="invia()">Salva</a>
@@ -25,11 +25,11 @@ export default {
   name: "ProfileComponent",
   data() {
     return {
-      // profile: {
-      // nome1: "",
-      cognome: "",
-      email: "",
-      // }
+      profile: {
+        nome1: "",
+        cognome: "",
+        email: "",
+      },
     };
   },
   computed: {
@@ -44,12 +44,12 @@ export default {
   },
   methods: {
     ...mapMutations(["setName"]),
-    // ...mapActions("profile", ["actionProfile"]),
+    ...mapActions(["actionProfile"]),
     invia() {
       // this.$store.state.realname = this.nome1;
       // this.$store.commit("setName", "Roberto");
-      this.setName("Roberto");
-      // this.actionProfile(this.profile);
+      // this.setName("Roberto");
+      this.actionProfile(this.profile);
     },
   },
 };
