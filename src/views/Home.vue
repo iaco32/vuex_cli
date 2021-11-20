@@ -20,7 +20,7 @@ export default {
   <div class="home">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">Benvenuto : {{ nome1 }}</div>
+        <div class="col-md-12">Benvenuto : {{ realname }}</div>
       </div>
       <hr />
       <div class="row">
@@ -50,15 +50,15 @@ export default {
     };
   },
   computed: {
-    // ...mapState(["profile.nome"]),
+    ...mapState(["realname"]),
     // ...mapGetters({
     //   getName: "profile/getName",
     //   getNameSettings: "settings/getName",
     //   getEmail: "profile/getEmail",
     // }),
-    nome1() {
-      return this.$store.getters.getName;
-    },
+    // nome1() {
+    //   return this.$store.getters.getName;
+    // },
   },
   methods: {
     resetF() {
