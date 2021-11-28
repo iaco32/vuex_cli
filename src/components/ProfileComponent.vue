@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     ...mapMutations(["setName"]),
-    ...mapActions(["actionProfile"]),
+    ...mapActions("profile", ["actionProfile"]),
     invia() {
       // this.$store.state.realname = this.nome1;
       // this.$store.commit("setName", "Roberto");

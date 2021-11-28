@@ -20,7 +20,11 @@ export default {
   },
   created() {},
   computed: {
-    ...mapGetters(["getName", "getCognome", "getEmail"]),
+    ...mapGetters({
+      getName: "profile/getName",
+      getCognome: "profile/getCognome",
+      getEmail: "profile/getEmail",
+    }),
     // nome1() {
     //   return this.$store.getters.getName;
     // },

@@ -4,8 +4,8 @@ const state = {
     email: ''
 };
 const getters = {
-    getName: state => {
-      return state.realname;
+    getName: (state, getters, rootState, rootGetters) => {
+      return state.realname + ' - ' + rootGetters['settings/getName'];
     },
     getCognome: state => {
       return state.cognome;
@@ -36,8 +36,9 @@ const mutations = {
 };
 
 export default {
-    state,
-    getters,
-    actions,
-    mutations
+  namespaced : true,
+  state,
+  getters,
+  actions,
+  mutations
 }

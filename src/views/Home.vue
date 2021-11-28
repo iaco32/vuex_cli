@@ -20,7 +20,9 @@ export default {
   <div class="home">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">Benvenuto : {{ realname }}</div>
+        <div class="col-md-12">
+          Benvenuto : {{ getName }} ({{ getNameSettings }})
+        </div>
       </div>
       <hr />
       <div class="row">
@@ -50,7 +52,13 @@ export default {
     };
   },
   computed: {
-    ...mapState(["realname"]),
+    // ...mapState(["realname"]),
+    ...mapGetters({
+      getName: "profile/getName",
+      getNameSettings: "settings/getName",
+      getCognome: "profile/getCognome",
+      getEmail: "profile/getEmail",
+    }),
     // ...mapGetters({
     //   getName: "profile/getName",
     //   getNameSettings: "settings/getName",
